@@ -99,6 +99,9 @@ function game(){
     let b=size-1;
     let sc=0;
 
+    let currCycle=0;
+    let prevDirChange=0;
+    
     food = [Math.round(a + (b-a)* Math.random()),Math.round(a + (b-a)* Math.random())];
     
     //check if mobile device
@@ -132,6 +135,7 @@ function game(){
         return false;
     }
     function gameEngine(){
+        ++currCycle;
         if(isCollide(snakeArr)){
             gameOver = true;   
             alert("Game Over. Press any key to play again!");
@@ -263,6 +267,9 @@ function game(){
     window.requestAnimationFrame(main); 
 
     function moveSnake(e){
+        if(prevDirChange===currCycle)
+            gameEngine();
+        prevDirChange=currCycle;
         if(e=="ArrowUp" && inputDir[1]!=1){
             inputDir[0]=0;
             inputDir[1]=-1;
