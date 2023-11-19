@@ -179,19 +179,14 @@ body{
     display: grid;
     grid-template-columns: 27vw 27vw 27vw;
 }
-.blocks{
-    padding: .5vw;
-}
 .blocks button{
     background-color: white;
-    width:25vw;
-    height:25vw;
+    width:24vw;
+    height:24vw;
     border:1vw solid rgb(3, 71, 17);
+    margin:1vw 2vw 2vw 1vw;
     border-radius: 2vw;
     box-shadow: 1vw 1vw 1vw rgb(62, 156, 80);
-    /*font-size: 15vw;
-    font-weight: 900;
-    font-family: 'Audiowide';*/
     background-size: 10vw;
     background-repeat: no-repeat;
     background-position:center;
@@ -209,6 +204,6 @@ body{
     background-image: url(right.jpg);
 }
 .blocks button:active{
-    margin:.5vw -.5vw -.5vw .5vw;
-    box-shadow: .5vw .5vw .5vw rgb(182, 182, 182);
+    margin:1.5vw;
+    box-shadow: .5vw .5vw .5vw rgb(65, 151, 79);
 }
