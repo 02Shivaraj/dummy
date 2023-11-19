@@ -92,80 +92,80 @@ body{
 }
 
 .head_u{
-    background-image: url(../snake2/head_u.png);
+    background-image: url(head_u.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .head_d{
-    background-image: url(../snake2/head_d.png);
+    background-image: url(head_d.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .head_l{
-    background-image: url(../snake2/head_l.png);
+    background-image: url(head_l.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .head_r{
-    background-image: url(../snake2/head_r.png);
+    background-image: url(head_r.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tail_u{
-    background-image: url(../snake2/tail_u.png);
+    background-image: url(tail_u.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .tail_d{
-    background-image: url(../snake2/tail_d.png);
+    background-image: url(tail_d.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .tail_l{
-    background-image: url(../snake2/tail_l.png);
+    background-image: url(tail_l.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .tail_r{
-    background-image: url(../snake2/tail_r.png);
+    background-image: url(tail_r.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .body_v{
-    background-image: url(../snake2/body_v.png);
+    background-image: url(body_v.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .body_h{
-    background-image: url(../snake2/body_h.png);
+    background-image: url(body_h.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .body_tl{
-    background-image: url(../snake2/body_tl.png);
+    background-image: url(body_tl.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .body_tr{
-    background-image: url(../snake2/body_tr.png);
+    background-image: url(body_tr.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .body_bl{
-    background-image: url(../snake2/body_bl.png);
+    background-image: url(body_bl.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .body_br{
-    background-image: url(../snake2/body_br.png);
+    background-image: url(body_br.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .food{
-    background-image: url(../snake2/apple.png);
+    background-image: url(apple.png);
     background-size: cover;
 }
 .wall{
