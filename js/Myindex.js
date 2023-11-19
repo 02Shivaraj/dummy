@@ -99,9 +99,6 @@ function game(){
     let b=size-1;
     let sc=0;
 
-    let currCycle=0;
-    let prevDirChange=0;
-    
     food = [Math.round(a + (b-a)* Math.random()),Math.round(a + (b-a)* Math.random())];
     
     //check if mobile device
@@ -135,7 +132,6 @@ function game(){
         return false;
     }
     function gameEngine(){
-        ++currCycle;
         if(isCollide(snakeArr)){
             gameOver = true;   
             alert("Game Over. Press any key to play again!");
@@ -261,44 +257,43 @@ function game(){
             foodElement.style.gridColumnStart = food[0];
             foodElement.classList.add('food')
             board.appendChild(foodElement);
+
+            function moveSnake(e){
+                if(prevDirChange===currCycle)
+                    return;
+                prevDirChange=currCycle;
+                if(e=="ArrowUp" && inputDir[1]!=1){
+                    inputDir[0]=0;
+                    inputDir[1]=-1;
+                }
+                else if(e=="ArrowDown" && inputDir[1]!=-1){
+                    inputDir[0]=0;
+                    inputDir[1]=1;
+                }
+                else if(e=="ArrowLeft" && inputDir[0]!=1){
+                    inputDir[0]=-1;
+                    inputDir[1]=0;
+                }
+                else if(e=="ArrowRight" && inputDir[0]!=-1){
+                    inputDir[0]=1;
+                    inputDir[1]=0;
+                }
+            }
+            window.addEventListener('keydown', e =>{
+                moveSnake(e.key)
+            });
+        
+            function handleButtonKeyMove(e) {
+                const { id } = e.currentTarget;
+                moveSnake(id);
+            }
+        
+            const keyBtns = document.querySelectorAll('.controls button');
+            keyBtns.forEach(keyBtn => {
+                keyBtn.addEventListener('mousedown', handleButtonKeyMove);
+                keyBtn.addEventListener('touchstart', handleButtonKeyMove);
+            });
         }   
     }
-
     window.requestAnimationFrame(main); 
-
-    function moveSnake(e){
-        if(prevDirChange===currCycle)
-            return;
-        prevDirChange=currCycle;
-        if(e=="ArrowUp" && inputDir[1]!=1){
-            inputDir[0]=0;
-            inputDir[1]=-1;
-        }
-        else if(e=="ArrowDown" && inputDir[1]!=-1){
-            inputDir[0]=0;
-            inputDir[1]=1;
-        }
-        else if(e=="ArrowLeft" && inputDir[0]!=1){
-            inputDir[0]=-1;
-            inputDir[1]=0;
-        }
-        else if(e=="ArrowRight" && inputDir[0]!=-1){
-            inputDir[0]=1;
-            inputDir[1]=0;
-        }
-    }
-    window.addEventListener('keydown', e =>{
-        moveSnake(e.key)
-    });
-
-    function handleButtonKeyMove(e) {
-        const { id } = e.currentTarget;
-        moveSnake(id);
-    }
-
-    const keyBtns = document.querySelectorAll('.controls button');
-    keyBtns.forEach(keyBtn => {
-        keyBtn.addEventListener('mousedown', handleButtonKeyMove);
-        keyBtn.addEventListener('touchstart', handleButtonKeyMove);
-    });
 }
