@@ -207,3 +207,28 @@ body{
     margin:1.5vw;
     box-shadow: .5vw .5vw .5vw rgb(65, 151, 79);
 }
+
+.shake {
+	animation: shake .5s linear 1;
+}
+
+@keyframes shake {
+
+	10%,
+	90% {
+		transform: translate3d(0.3vmin, 0, 0);
+	}
+
+	20%,
+    30%,
+	50%,
+	70%,
+    80% {
+		transform: translate3d(-0.6vmin, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(0.6vmin, 0, 0);
+	}
+}
