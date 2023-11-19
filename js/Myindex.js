@@ -268,7 +268,7 @@ function game(){
 
     function moveSnake(e){
         if(prevDirChange===currCycle)
-            gameEngine();
+            return;
         prevDirChange=currCycle;
         if(e=="ArrowUp" && inputDir[1]!=1){
             inputDir[0]=0;
