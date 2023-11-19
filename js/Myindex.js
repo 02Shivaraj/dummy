@@ -259,9 +259,6 @@ function game(){
             board.appendChild(foodElement);
 
             function moveSnake(e){
-                if(prevDirChange===currCycle)
-                    return;
-                prevDirChange=currCycle;
                 if(e=="ArrowUp" && inputDir[1]!=1){
                     inputDir[0]=0;
                     inputDir[1]=-1;
