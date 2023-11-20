@@ -76,8 +76,7 @@ function forMobile(){
         board.style.width="90vw";
         board.style.height="90vw";
 
-        var x=screen.width;
-        console.log(x);
+        delay=10000;
     }
     else{
         controls.classList.remove("controls");
@@ -85,9 +84,12 @@ function forMobile(){
 
         board.style.width = "70vmin";
         board.style.height = "70vmin";
+
+        delay=100000;
     }   
 }
 
+let delay=0;
 let gameOver = false;
 let gameStopped = false;
 var h_sc=0;
@@ -131,7 +133,7 @@ function game(){
             if(gameOver){
                 gameOver=false;
                 i=0;
-                while(i<100000)
+                while(i<delay)
                     i=i+0.003;
                 overAlert.style.display="block";
             }
