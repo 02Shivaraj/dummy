@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Audiowide&&effects=outline");
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 @font-face {
     font-family: "digits";
     src: url(digital-7.ttf);
@@ -209,7 +209,7 @@ body{
 }
 
 .shake {
-	animation: shake .5s linear 1;
+	animation: shake .3s linear 1;
 }
 
 @keyframes shake {
@@ -231,4 +231,38 @@ body{
 	60% {
 		transform: translate3d(0.6vmin, 0, 0);
 	}
+}
+
+#overAlert{
+    display:none;
+    background-color: rgba(0, 0, 0, 0.777);
+    position:absolute;
+    width:100vw;
+    height:100vh;
+}
+#overAlert div{
+    top:50%;
+    left:50%;
+    position: absolute;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+#overAlert h1{
+    font-size: 8vw;
+    color:rgb(255, 0, 0);
+    text-shadow: 0vw .2vw white;
+}
+#overAlert button{
+    color:rgb(64, 255, 0);
+    background-color: transparent;
+    outline:none;
+    border: none;
+    font-size: 2vw;
+    margin-left: 15vw;
+    padding:.5vw 2vw;
+    border-radius:10vw;
+}
+#overAlert button:hover{
+    background-color: rgba(128, 128, 128, 0.204);
 }
