@@ -124,6 +124,7 @@ function game(){
         //Reset game if Game Over
         if(gameOver || gameStopped){
             gameSound.pause();
+            console.log("paused");
             inputDir =  [1,0]; 
             snakeArr = [[4,2],[3,2],[2,2]]; 
             change();  
