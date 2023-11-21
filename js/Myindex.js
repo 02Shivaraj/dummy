@@ -46,8 +46,9 @@ document.getElementById("button").addEventListener("click",function(){
     let x = document.getElementById("button").innerHTML;
     if(x === "START")
         game();
-    else
+    else{
         gameStopped = true;
+    }
 });
 
 function change(){
