@@ -46,10 +46,8 @@ document.getElementById("button").addEventListener("click",function(){
     let x = document.getElementById("button").innerHTML;
     if(x === "START")
         game();
-    else{
+    else
         gameStopped = true;
-        alert("Game Stopped!")
-    }
 });
 
 function change(){
@@ -84,7 +82,6 @@ function forMobile(){
 
         board.style.width = "70vmin";
         board.style.height = "70vmin";
-
         delay=100000;
     }   
 }
@@ -125,6 +122,7 @@ function game(){
     function main(ctime) {
         //Reset game if Game Over
         if(gameOver || gameStopped){
+            gameSound.pause();
             inputDir =  [1,0]; 
             snakeArr = [[4,2],[3,2],[2,2]]; 
             change();  
@@ -160,7 +158,6 @@ function game(){
         ++currCycle;
         if(isCollide(snakeArr)){
             overSound.play();
-            gameSound.pause();
             board.classList.add("shake");      
             gameOver = true;
         }
@@ -194,8 +191,17 @@ function game(){
             if(snakeArr[0][1] === food[1] && snakeArr[0][0] ===food[0]){
                 foodSound.play();
                 snakeArr[snakeArr.length] = [0,0];
-                food = [Math.round(a + (b-a)* Math.random()),Math.round(a + (b-a)* Math.random())]
-                while(snakeArr.includes(food)){                
+                food = [Math.round(a + (b-a)* Math.random()),Math.round(a + (b-a)* Math.random())];
+                let l=snakeArr.length;
+                while(true){   
+                    var i=0;             
+                    while(i<l){
+                        if(snakeArr[i][0]==food[0] && snakeArr[i][1]==food[1])
+                            break;
+                        ++i
+                    }
+                    if(i==l)
+                        break;
                     food = [Math.round(a + (b-a)* Math.random()),Math.round(a + (b-a)* Math.random())];
                 }
                 ++sc;
@@ -291,7 +297,6 @@ function game(){
     window.requestAnimationFrame(main); 
 
     function moveSnake(e){
-        console.log("moveSnake");
         if(prevDirChange === currCycle)
             return;
         prevDirChange = currCycle;
