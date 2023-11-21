@@ -63,6 +63,24 @@ function change(){
     }
 }
 
+function lock (orientation) {
+    let de = document.documentElement;
+    if (de.requestFullscreen) { de.requestFullscreen(); }
+    else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
+    else if (de.webkitRequestFullscreen) { de.webkitRequestFullscreen(); }
+    else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
+
+    screen.orientation.lock(orientation);
+}
+function unlock () {
+    screen.orientation.unlock();
+
+    if (document.exitFullscreen) { document.exitFullscreen(); }
+    else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+    else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
+    else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+}
+
 function forMobile(){
     let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         ? true
@@ -76,6 +94,8 @@ function forMobile(){
         board.style.height="90vw";
 
         delay=10000;
+
+        lock("portrait");
     }
     else{
         controls.classList.remove("controls");
@@ -84,6 +104,8 @@ function forMobile(){
         board.style.width = "70vmin";
         board.style.height = "70vmin";
         delay=100000;
+
+        unlock();
     }   
 }
 
